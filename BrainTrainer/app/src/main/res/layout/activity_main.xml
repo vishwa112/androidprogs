@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gameConstraints"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/timertextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="36dp"
+            android:text="30s"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="40sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toStartOf="@+id/equationtextview"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/equationtextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="27dp"
+            android:text="1+1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="60sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="378dp"
+            android:layout_height="308dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="50dp"
+            app:columnCount="2"
+            app:layout_constraintBottom_toTopOf="@+id/resulttextview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/equationtextview"
+            app:rowCount="2">
+
+            <Button
+                android:id="@+id/button1"
+                android:background="@drawable/button_bg"
+                android:onClick="chosenAns"
+                android:tag="0"
+                android:text="b0"
+                android:textSize="60sp"
+                android:visibility="visible"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:id="@+id/button2"
+                android:background="@drawable/button_bg"
+                android:onClick="chosenAns"
+                android:tag="1"
+                android:text="b1"
+                android:textSize="60sp"
+                android:visibility="visible"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:id="@+id/button3"
+                android:background="@drawable/button_bg"
+                android:onClick="chosenAns"
+                android:tag="2"
+                android:text="b2"
+                android:textSize="60sp"
+                android:visibility="visible"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:id="@+id/button4"
+                android:background="@drawable/button_bg"
+                android:onClick="chosenAns"
+                android:tag="3"
+                android:text="b3"
+                android:textSize="60sp"
+                android:visibility="visible"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_rowWeight="1" />
+
+
+        </androidx.gridlayout.widget.GridLayout>
+
+        <TextView
+            android:id="@+id/resulttextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="158dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="157dp"
+            android:layout_marginBottom="70dp"
+            android:text="correct"
+            android:textSize="30sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+        <TextView
+            android:id="@+id/attempttextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="17dp"
+            android:text="0/0"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="40sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/equationtextview"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.525" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
